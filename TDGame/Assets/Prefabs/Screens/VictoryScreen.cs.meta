@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bc6b78b1fe3b1554da4efe58e3edfe8d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - titleText: {instanceID: 0}
+  - messageText: {instanceID: 0}
+  - nextLevelButton: {instanceID: 0}
+  - retryButton: {instanceID: 0}
+  - menuButton: {instanceID: 0}
+  - victoryFanfare: {fileID: 8300000, guid: f94c2b36f25648a499fe7bb9194a9676, type: 3}
+  - starSound: {instanceID: 0}
+  - buttonClickSound: {instanceID: 0}
+  - whooshSound: {instanceID: 0}
+  - confettiParticles: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
