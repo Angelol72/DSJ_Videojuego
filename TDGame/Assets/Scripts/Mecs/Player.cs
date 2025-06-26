@@ -28,6 +28,16 @@ public class Player : Unit
     public override void TakeDamage(int damage)
     {
         LifeController lifeManagement = GetComponent<LifeController>();
+        // Sound effect on take damage
+        GameUISoundController.Instance.PlayCastleTakeDamage();
+
+        // Shake effect
+        ShakeUnit shakeUnit = GetComponent<ShakeUnit>();
+        if (shakeUnit != null)
+        {
+            shakeUnit.TriggerShake();
+        }
+
         if (lifeManagement != null)
         {
             Unit.UnitState newState = lifeManagement.TakeDamage(damage);

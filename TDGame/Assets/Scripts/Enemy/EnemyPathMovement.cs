@@ -84,6 +84,7 @@ public class EnemyPathMovement : MonoBehaviour
 
     public void Enrage()
     {
+        GameUISoundController.Instance.PlayEnrageEnemy();
         // Increase speed when enraged
         speed *= enrageSpeedMultiplier;
         StartCoroutine(ResetSpeedAfterDelay(enrageDuration)); // Reset speed after 3 seconds

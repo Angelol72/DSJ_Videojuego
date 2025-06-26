@@ -623,8 +623,8 @@ MonoBehaviour:
   state: 0
   unitName: Bad Slime
   attackPower: 5
-  enemyPoints: 5
-  manaRewarded: 4
+  enemyPoints: 100
+  manaRewarded: 1
   textBallon: {fileID: 2653914820300884373}
   attackRange: 2.6
   attackCooldown: 1.5
@@ -643,8 +643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0325d3a13b8384b8daa72a35de0c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
-  currentHealth: 4
+  maxHealth: 2
+  currentHealth: 2
 --- !u!114 &3008528472519139782
 MonoBehaviour:
   m_ObjectHideFlags: 0

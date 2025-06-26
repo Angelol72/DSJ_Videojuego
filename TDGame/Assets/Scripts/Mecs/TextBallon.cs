@@ -104,6 +104,7 @@ public class TextBallon : MonoBehaviour
                 btn.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
                 {
                     ShowMessageOnCorrectAnswer();
+                    GameUISoundController.Instance.PlayCorrectAnswer();
                     onCorrectAnswerEvent?.Invoke(this, EventArgs.Empty); // Invoke the event for correct answer
                 });
             }

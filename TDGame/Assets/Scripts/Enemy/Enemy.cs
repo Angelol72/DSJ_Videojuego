@@ -87,6 +87,14 @@ public class Enemy : Unit
         };
     }
 
+    public void Flip()
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+    }
+
     public override void Die()
     {
         state = UnitState.Dead; // Set the state to Dead
@@ -96,6 +104,7 @@ public class Enemy : Unit
 
         // Animation or effects can be added here
         animator.SetTrigger("Die");
+        GameUISoundController.Instance.PlayMonsterDie();
 
         dieEvent?.Invoke(this, System.EventArgs.Empty); // Notify subscribers that the enemy has died
 

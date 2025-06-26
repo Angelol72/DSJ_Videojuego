@@ -46,6 +46,7 @@ public class TextBallonAnimation : MonoBehaviour
     // Animate problem text and options
     public void fadeIn()
     {
+        GameUISoundController.Instance.PlayOpenSound();
         // Show the options with a fade-in effect
         CanvasGroup canvasGroup = options.GetComponent<CanvasGroup>();
         if (canvasGroup != null)
@@ -81,6 +82,8 @@ public class TextBallonAnimation : MonoBehaviour
 
     public void fadeOut(float additionalDelay)
     {
+        GameUISoundController.Instance.PlayCloseSound();
+
         CanvasGroup canvasGroup = options.GetComponent<CanvasGroup>(); // options CanvasGroup
         CanvasGroup canvasGroup2 = problemText.GetComponent<CanvasGroup>(); // problemText CanvasGroup
         Vector3 posicionInicial = problemText.transform.localPosition;
