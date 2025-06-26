@@ -47,6 +47,8 @@ public class SpellController : MonoBehaviour
             return;
         }
 
+        GameUISoundController.Instance.PlayFrozenSpell();
+
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         //Plane[] cameraPlanes = GeometryUtility.CalculateFrustumPlanes(mainCamera);
 
@@ -68,6 +70,8 @@ public class SpellController : MonoBehaviour
             // add sound effect or visual feedback for insufficient mana
             return;
         }
+
+        GameUISoundController.Instance.PlayLightningSpell();
 
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         Plane[] cameraPlanes = GeometryUtility.CalculateFrustumPlanes(mainCamera);

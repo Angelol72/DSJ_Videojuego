@@ -1,49 +1,69 @@
 using UnityEngine;
+using System.Collections;
 
 public class RandomSpawnerArea : MonoBehaviour
 {
     public Vector2 size = new Vector2(5f, 5f);
-    public GameObject objectToSpawn;
     public PathData pathData;
     public ProblemsData problemsData;
 
-    [Header("Spawn Settings")]
-    public float spawnInterval = 2f;
-    private float spawnTimer = 0f;
+    public Wave[] waves;
+    public float timeBetweenWaves = 5f;
+    public bool flipEnemies = false;
+
+    private int currentWaveIndex = 0;
+    private bool isSpawning = false;
 
     private void Update()
     {
-        spawnTimer += Time.deltaTime;
-        if (spawnTimer >= spawnInterval)
+        if (!isSpawning && currentWaveIndex < waves.Length)
         {
-            Spawn();
-            spawnTimer = 0f; // Reset the timer after spawning
+            StartCoroutine(SpawnWave(waves[currentWaveIndex]));
         }
     }
 
-    public void Spawn()
+    IEnumerator SpawnWave(Wave wave)
     {
-        Vector2 center = transform.position;
-        float x = Random.Range(center.x - size.x / 2, center.x + size.x / 2);
-        float y = Random.Range(center.y - size.y / 2, center.y + size.y / 2);
+        isSpawning = true;
 
-        Vector2 spawnPosition = new Vector2(x, y);
-        GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
-        spawnedObject.GetComponent<EnemyPathMovement>().pathData = pathData;
-
-        // Randomize problem and answer
-        TextBallon textBallon = spawnedObject.GetComponent<Enemy>().textBallon;
-        if (textBallon != null)
+        for (int i = 0; i < wave.count; i++)
         {
-            //var generated = ProblemGenerator.GenerateRandomProblem(problemsData);
-            var generated = ProblemGenerator.GenerateRandomLinearEquationProblem();
-            textBallon.problemsData = problemsData;
-            textBallon.questionText = generated.problemText;
-            textBallon.answers = generated.answers;
-            textBallon.correctAnswerIndex = generated.correctAnswerIndex;
-            textBallon.SetQuestionAndAnswers();
-            textBallon.SetOptionListeners();
+            // Randomize point to spawn a monster
+            Vector2 center = transform.position;
+            float x = Random.Range(center.x - size.x / 2, center.x + size.x / 2);
+            float y = Random.Range(center.y - size.y / 2, center.y + size.y / 2);
+            Vector2 spawnPosition = new Vector2(x, y);
+
+            // Spawn the monster and set path to move
+            GameObject spawnedObject = Instantiate(wave.enemyPrefab, spawnPosition, Quaternion.identity);
+            spawnedObject.GetComponent<EnemyPathMovement>().pathData = pathData;
+
+            // Flip sprite
+            if (flipEnemies)
+            {
+                spawnedObject.GetComponent<Enemy>().Flip();
+            }
+
+            // Randomize problem and answer
+            TextBallon textBallon = spawnedObject.GetComponent<Enemy>().textBallon;
+
+            if (textBallon != null)
+            {
+                var generated = ProblemGenerator.GenerateRandomLinearEquationProblem();
+                textBallon.problemsData = problemsData;
+                textBallon.questionText = generated.problemText;
+                textBallon.answers = generated.answers;
+                textBallon.correctAnswerIndex = generated.correctAnswerIndex;
+                textBallon.SetQuestionAndAnswers();
+                textBallon.SetOptionListeners();
+            }
+
+            yield return new WaitForSeconds(wave.spawnInterval);
         }
+
+        currentWaveIndex++;
+        yield return new WaitForSeconds(timeBetweenWaves);
+        isSpawning = false;
     }
 
     private void OnDrawGizmosSelected()

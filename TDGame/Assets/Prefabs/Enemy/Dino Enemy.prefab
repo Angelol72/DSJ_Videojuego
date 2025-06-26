@@ -48,6 +48,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1937190200589360553, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937190200589360553, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2210676359056870271, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.034
@@ -57,12 +65,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3925156398213478428}
     - target: {fileID: 2525688575845758013, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: attackPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525688575845758013, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: enemyPoints
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525688575845758013, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: manaRewarded
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525688575845758013, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 5189306420046710108}
     - target: {fileID: 2743160470150302435, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
       propertyPath: m_Name
       value: Dino Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884115104029927414, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: speed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884115104029927414, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: enrageSpeedMultiplier
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7715167683140963757, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
       propertyPath: m_AnchorMax.x
