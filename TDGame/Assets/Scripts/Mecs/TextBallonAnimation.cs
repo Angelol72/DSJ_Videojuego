@@ -66,6 +66,13 @@ public class TextBallonAnimation : MonoBehaviour
         canvasGroup2.interactable = false;
         canvasGroup2.blocksRaycasts = false;
 
+        // get canvas and set sorting order
+        Canvas canvas = problemText.GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.sortingOrder += 1;
+        }
+
         Vector3 posicionInicial = problemText.transform.localPosition;
 
         problemText.transform.DOLocalMoveY(posicionInicial.y + moveDistance, animationDuration)
@@ -95,7 +102,8 @@ public class TextBallonAnimation : MonoBehaviour
             // Deactivate the problem text and move it down
             sequence.Join(problemText.transform.DOLocalMoveY(posicionInicial.y - moveDistance, animationDuration)
                 .SetEase(Ease.OutCubic));
-            sequence.AppendCallback(() => {
+            sequence.AppendCallback(() =>
+            {
                 canvasGroup2.interactable = false;
                 canvasGroup2.blocksRaycasts = false;
             });
@@ -112,10 +120,18 @@ public class TextBallonAnimation : MonoBehaviour
                 sequence.AppendInterval(additionalDelay);
             }
 
-            sequence.AppendCallback(() => {
+            sequence.AppendCallback(() =>
+            {
                 canvasGroup2.interactable = true;
                 canvasGroup2.blocksRaycasts = true;
-            }); 
+            });
+
+            // Reset canvas sorting order
+            Canvas canvas = problemText.GetComponent<Canvas>();
+            if (canvas != null)
+            {
+                canvas.sortingOrder -= 1;
+            }
         }
     }
 

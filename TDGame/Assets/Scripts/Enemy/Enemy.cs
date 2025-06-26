@@ -1,16 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class Enemy : Unit
 {
     public event EventHandler dieEvent; // Event to notify when the enemy dies
     public int enemyPoints = 1; // Points awarded to the player when this enemy dies
+    public int manaRewarded = 1;
     public TextBallon textBallon; // Reference to a TextBallon component for add event handling
     public float attackRange = 2f; // Range within which the enemy can attack
     public float attackCooldown = 1.5f; // Cooldown time between attacks
     private float lastAttackTime = -Mathf.Infinity; // Time of the last attack
+    
     public Animator animator; // Animator for handling animations
+
+    // Sprite renderer
+    public SpriteRenderer spriteRenderer;
+
+    // Debuffs applied to the enemy
+    private List<Debuff> activeDebuffs = new List<Debuff>();
+    public bool canAct = true;
 
     void Start()
     {
@@ -20,10 +30,40 @@ public class Enemy : Unit
     private void Update()
     {
         if (state == UnitState.Dead)
+            return;
+
+        canAct = true; // Reset, debuffs can change this
+
+        // Procesa todos los debuffs activos
+        for (int i = activeDebuffs.Count - 1; i >= 0; i--)
         {
+            Debuff debuff = activeDebuffs[i];
+            if (Time.time >= debuff.endTime)
+            {
+                debuff.OnEnd(this);
+                activeDebuffs.RemoveAt(i);
+                continue;
+            }
+            debuff.ApplyEffect(this);
+        }
+
+        EnemyPathMovement enemyPathMovement = GetComponent<EnemyPathMovement>();
+
+        if (!canAct)
+        {
+            if (enemyPathMovement != null)
+            {
+                enemyPathMovement.enabled = false; // Disable movement if the enemy cannot act
+            }
             return;
         }
 
+        if (enemyPathMovement != null)
+        {
+            enemyPathMovement.enabled = true; // Enable movement if the enemy can act
+        }
+
+        // Check if the enemy can attack the player
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
@@ -39,15 +79,12 @@ public class Enemy : Unit
     {
         // Take damage when the correct answer is given
         if (textBallon == null)
-        {
             return;
-        }
-        // Subscribe to the onCorrectAnswerEvent of the TextBallon component
+
         textBallon.onCorrectAnswerEvent += (sender, e) =>
         {
             TakeDamage(1);
         };
-
     }
 
     public override void Die()
@@ -71,8 +108,12 @@ public class Enemy : Unit
             Player player = playerObject.GetComponent<Player>();
             if (player != null)
             {
-                player.score += enemyPoints; // Increment player's score
+                player.score += enemyPoints;
             }
+
+            ManaController manaController = playerObject.GetComponent<ManaController>();
+            if (manaController != null)
+                manaController.AddMana(manaRewarded);
         }
 
     }
@@ -80,17 +121,14 @@ public class Enemy : Unit
     public void Attack(Unit target)
     {
         if (state == UnitState.Dead)
-        {
             return;
-        }
 
         // Animation or effects can be added here
         animator.SetTrigger("Attack"); // Trigger the attack animation
 
-        // Check if the target player is not null
         if (target != null)
         {
-            target.TakeDamage(attackPower); // Call the player's TakeDamage method with the attack power
+            target.TakeDamage(attackPower);
         }
 
         lastAttackTime = Time.time; // Update the last attack time
@@ -116,10 +154,41 @@ public class Enemy : Unit
         }
     }
 
+    public void ApplyDebuff(DebuffType type, float duration)
+    {
+        // Refresh the debuff if it already exists
+        Debuff existing = activeDebuffs.Find(d => d.type == type);
+        if (existing != null)
+        {
+            existing.endTime = Time.time + duration;
+        }
+        else
+        {
+            switch (type)
+            {
+                case DebuffType.Frozen:
+                    activeDebuffs.Add(new FrozenDebuff(duration, Time.time));
+                    break;
+                case DebuffType.Burned:
+                    activeDebuffs.Add(new BurnedDebuff(duration, Time.time));
+                    break;
+                // add more debuff types as needed
+                default:
+                    break;
+            }
+        }
+    }
+
+    // Check if the enemy has a specific debuff
+    public bool HasDebuff(DebuffType type)
+    {
+        return activeDebuffs.Exists(d => d.type == type);
+    }
+
     private System.Collections.IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(1f); // Wait for 1 second before destroying
-        Destroy(gameObject); // Destroy the enemy game object
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
 }

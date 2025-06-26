@@ -42,8 +42,20 @@ public class EnemyPathMovement : MonoBehaviour
 
     void Update()
     {
+        // Check debuffs and whether the enemy can act
+        Enemy enemy = GetComponent<Enemy>();
+        if (enemy == null)
+        {
+            return;
+        }
+
+        if (enemy.HasDebuff(DebuffType.Frozen))
+        {
+            // If the enemy is frozen, do not move
+            return;
+        }
+
         // move the enemy along the path
-        // waypoint is a list of transform objects that represent the path
         if (pathData == null || pathData.waypoints == null || pathData.waypoints.Count == 0)
         {
             Debug.LogWarning("PathData or waypoints are not set.");

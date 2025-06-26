@@ -178,11 +178,11 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1365862991
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &2390586976332892271
 MonoBehaviour:
@@ -292,11 +292,11 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1365862991
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &6519789737248234805
 MonoBehaviour:
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 4564804384118724693}
   - component: {fileID: 6956153948925302570}
   - component: {fileID: 4375542935506068140}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 2210676359056870271}
   - component: {fileID: 2653914820300884373}
   - component: {fileID: 2432739165343702933}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text Ballon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,12 +440,12 @@ Transform:
   m_GameObject: {fileID: 2315508269776654625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4382955685676684161}
   - {fileID: 3815567972621499839}
+  - {fileID: 4382955685676684161}
   m_Father: {fileID: 1677666948495506353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2653914820300884373
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 2953540439740226588}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 2743160470150302435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.64, y: 5.64, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -540,7 +540,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -589,8 +589,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.087197304, y: 0.102585554}
-  m_Radius: 0.42306137
+  m_Offset: {x: 0.087197065, y: 0.32088527}
+  m_Radius: 0.3430712
 --- !u!114 &6884115104029927414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,11 +623,14 @@ MonoBehaviour:
   state: 0
   unitName: Bad Slime
   attackPower: 5
-  enemyPoints: 1
+  enemyPoints: 5
+  manaRewarded: 4
   textBallon: {fileID: 2653914820300884373}
   attackRange: 2
   attackCooldown: 1.5
   animator: {fileID: 3918557476453834710}
+  spriteRenderer: {fileID: 3918557476453834711}
+  canAct: 1
 --- !u!114 &1937190200589360553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,7 +816,7 @@ GameObject:
   - component: {fileID: 7715167683140963757}
   - component: {fileID: 833341774333596924}
   - component: {fileID: 6237576098068803763}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,11 +936,11 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1365862991
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &3933342193534636326
 MonoBehaviour:
@@ -989,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4382955685676684161}
   - component: {fileID: 5004151862688103616}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1403,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1444,7 +1447,7 @@ GameObject:
   - component: {fileID: 6793635847678314617}
   - component: {fileID: 5198956333320112744}
   - component: {fileID: 741212959448447602}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LifeBar (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1469,7 +1472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.49}
+  m_AnchoredPosition: {x: 0, y: -0.16}
   m_SizeDelta: {x: 200, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8773988254075009121
@@ -1642,11 +1645,11 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1365862991
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &724381035570893723
 MonoBehaviour:
@@ -2095,7 +2098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2829894397768627597, guid: 21571d5d9af36c04daddc532baeb37fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829894397768627597, guid: 21571d5d9af36c04daddc532baeb37fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2145,6 +2148,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1365862991
       objectReference: {fileID: 0}
+    - target: {fileID: 2829894397768627602, guid: 21571d5d9af36c04daddc532baeb37fb, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2158,5 +2165,10 @@ Transform:
 --- !u!95 &3918557476453834710 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2829894397768627603, guid: 21571d5d9af36c04daddc532baeb37fb, type: 3}
+  m_PrefabInstance: {fileID: 1235198739067873861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &3918557476453834711 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2829894397768627602, guid: 21571d5d9af36c04daddc532baeb37fb, type: 3}
   m_PrefabInstance: {fileID: 1235198739067873861}
   m_PrefabAsset: {fileID: 0}
