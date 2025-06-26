@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 2fc6ff9e9102a7443b8563a9f921911e
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 19fbd70f4159cad419d55ec84fab359e
+  - enabled: 1
+    path: Assets/Scenes/SONIDO.unity
+    guid: b84f32f866a387246b26e249d7c792cc
+  - enabled: 1
+    path: Assets/Scenes/LeaderBoard.unity
+    guid: e0f7bfce7d4de8244802d789f4d872d4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
