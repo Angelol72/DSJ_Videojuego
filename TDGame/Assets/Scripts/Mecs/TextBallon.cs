@@ -38,7 +38,7 @@ public class TextBallon : MonoBehaviour
         }
 
         // Generate a new problem
-        var generated = ProblemGenerator.GenerateRandomProblem(problemsData);
+        var generated = ProblemGenerator.GenerateRandomLinearEquationProblem();
 
         // Set the question text and answers
         questionText = generated.problemText;

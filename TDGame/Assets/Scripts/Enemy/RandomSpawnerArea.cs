@@ -35,7 +35,8 @@ public class RandomSpawnerArea : MonoBehaviour
         TextBallon textBallon = spawnedObject.GetComponent<Enemy>().textBallon;
         if (textBallon != null)
         {
-            var generated = ProblemGenerator.GenerateRandomProblem(problemsData);
+            //var generated = ProblemGenerator.GenerateRandomProblem(problemsData);
+            var generated = ProblemGenerator.GenerateRandomLinearEquationProblem();
             textBallon.problemsData = problemsData;
             textBallon.questionText = generated.problemText;
             textBallon.answers = generated.answers;

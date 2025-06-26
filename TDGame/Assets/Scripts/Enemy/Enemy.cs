@@ -95,7 +95,7 @@ public class Enemy : Unit
         GetComponent<CircleCollider2D>().enabled = false;
 
         // Animation or effects can be added here
-        // Start anmation, play sound, etc.
+        animator.SetTrigger("Die");
 
         dieEvent?.Invoke(this, System.EventArgs.Empty); // Notify subscribers that the enemy has died
 

@@ -626,7 +626,7 @@ MonoBehaviour:
   enemyPoints: 5
   manaRewarded: 4
   textBallon: {fileID: 2653914820300884373}
-  attackRange: 2
+  attackRange: 2.6
   attackCooldown: 1.5
   animator: {fileID: 3918557476453834710}
   spriteRenderer: {fileID: 3918557476453834711}
