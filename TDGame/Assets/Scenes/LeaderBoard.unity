@@ -130,8 +130,11 @@ GameObject:
   - component: {fileID: 33624080}
   - component: {fileID: 33624082}
   - component: {fileID: 33624081}
+<<<<<<< Updated upstream
   - component: {fileID: 33624084}
   - component: {fileID: 33624083}
+=======
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -171,7 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+>>>>>>> Stashed changes
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -179,6 +186,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< Updated upstream
     m_Font: {fileID: 12800000, guid: 54ed9628bf5a92040a6c7a017b36a615, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
@@ -186,6 +194,15 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+>>>>>>> Stashed changes
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -200,6 +217,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33624079}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!114 &33624083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +253,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8849712177067837780, guid: 39fb02bf5e6977048bf4a35842ff2362, type: 3}
   m_PrefabInstance: {fileID: 2191400984357613455}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &123573865
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +341,11 @@ GameObject:
   - component: {fileID: 175605067}
   - component: {fileID: 175605069}
   - component: {fileID: 175605068}
+<<<<<<< Updated upstream
   - component: {fileID: 175605071}
   - component: {fileID: 175605070}
+=======
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -362,7 +385,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+>>>>>>> Stashed changes
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -370,6 +397,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< Updated upstream
     m_Font: {fileID: 12800000, guid: 54ed9628bf5a92040a6c7a017b36a615, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
@@ -377,6 +405,15 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+>>>>>>> Stashed changes
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -391,6 +428,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175605066}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!114 &175605070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +459,8 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &268623363
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +560,10 @@ RectTransform:
   - {fileID: 123573866}
   - {fileID: 1940166975}
   - {fileID: 1893988956}
+<<<<<<< Updated upstream
   - {fileID: 53138108}
+=======
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -537,7 +580,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649848659}
+<<<<<<< Updated upstream
   - component: {fileID: 649848660}
+=======
+  - component: {fileID: 649848658}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: EstudiantesManager
   m_TagString: Untagged
@@ -545,6 +592,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
+=======
+--- !u!114 &649848658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649848657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb699df879f558341bfc362af8a3d43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estudiantesText: {fileID: 1940166973}
+>>>>>>> Stashed changes
 --- !u!4 &649848659
 Transform:
   m_ObjectHideFlags: 0
@@ -560,6 +623,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &649848660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tablaEstudiantes: {fileID: 1893988955}
   celdaPrefab: {fileID: 1463401989700357622, guid: 39fb02bf5e6977048bf4a35842ff2362, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,8 +748,11 @@ GameObject:
   - component: {fileID: 713901756}
   - component: {fileID: 713901758}
   - component: {fileID: 713901757}
+<<<<<<< Updated upstream
   - component: {fileID: 713901760}
   - component: {fileID: 713901759}
+=======
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -723,7 +792,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+>>>>>>> Stashed changes
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -731,6 +804,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< Updated upstream
     m_Font: {fileID: 12800000, guid: 54ed9628bf5a92040a6c7a017b36a615, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
@@ -738,6 +812,15 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+>>>>>>> Stashed changes
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -752,6 +835,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713901755}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!114 &713901759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,6 +866,8 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,8 +971,11 @@ GameObject:
   - component: {fileID: 1183345174}
   - component: {fileID: 1183345176}
   - component: {fileID: 1183345175}
+<<<<<<< Updated upstream
   - component: {fileID: 1183345178}
   - component: {fileID: 1183345177}
+=======
+>>>>>>> Stashed changes
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -926,7 +1015,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+=======
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+>>>>>>> Stashed changes
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -934,6 +1027,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< Updated upstream
     m_Font: {fileID: 12800000, guid: 54ed9628bf5a92040a6c7a017b36a615, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
@@ -941,6 +1035,15 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+>>>>>>> Stashed changes
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -955,6 +1058,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183345173}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!114 &1183345177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,6 +1089,8 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1316577638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1372,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853297282}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!114 &1853297286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1403,8 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1893988955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,8 +1444,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 6.144989, y: -0.24508667}
   m_SizeDelta: {x: -200.3463, y: -151.73}
+=======
+  m_AnchoredPosition: {x: 3.8825073, y: -3}
+  m_SizeDelta: {x: -216.0555, y: -175.4633}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893988957
 MonoBehaviour:
@@ -1358,7 +1472,11 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
+<<<<<<< Updated upstream
   m_CellSize: {x: 120, y: 30}
+=======
+  m_CellSize: {x: 100, y: 50}
+>>>>>>> Stashed changes
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 1
   m_ConstraintCount: 4
@@ -1375,14 +1493,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+=======
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+>>>>>>> Stashed changes
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 21300000, guid: 74493b5866790d642b7475004be3863a, type: 3}
+=======
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>> Stashed changes
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1479,6 +1605,7 @@ RectTransform:
   m_AnchoredPosition: {x: -3.7346, y: 2.807}
   m_SizeDelta: {x: 426.5307, y: 198.3857}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
 --- !u!1001 &2191400984357613455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1584,6 +1711,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39fb02bf5e6977048bf4a35842ff2362, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
