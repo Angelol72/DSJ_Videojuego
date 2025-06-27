@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 80fe4690758ec6442b258ab8eae6d7db
+=======
+guid: 26f8b57edf4a1f040882867fde71d4d8
+>>>>>>> Stashed changes
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
