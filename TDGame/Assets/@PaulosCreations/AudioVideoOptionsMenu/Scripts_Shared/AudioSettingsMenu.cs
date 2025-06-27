@@ -33,7 +33,7 @@ namespace PaulosAudioMenu
     //default values
     private bool isMuted = false;
     private float currentMainVolume = 1, currentFXsVolume = 1, currentMusicVolume = 1;
-    private int currentSpeakerMode = 1;//stereo
+  //  private int currentSpeakerMode = 1;//stereo
 
     private bool initiated = false, isApplying;
 
@@ -103,9 +103,9 @@ namespace PaulosAudioMenu
         AudioConfiguration config = AudioSettings.GetConfiguration();
 
         AudioSpeakerMode wantedMode = config.speakerMode;
-        string wantedModeText = "";
+       // string wantedModeText = "";
 
-        switch (currentSpeakerMode)
+       /* switch (currentSpeakerMode)
         {
             case 0:
                 wantedMode = AudioSpeakerMode.Mono;
@@ -135,7 +135,7 @@ namespace PaulosAudioMenu
                 wantedMode = AudioSpeakerMode.Prologic;
                 wantedModeText = "Prologic";
                 break;
-        }
+        }*/
 
         /*if (wantedMode != config.speakerMode)
         {
@@ -188,9 +188,9 @@ namespace PaulosAudioMenu
             AudioConfiguration config = AudioSettings.GetConfiguration();
 
             AudioSpeakerMode wantedMode = config.speakerMode;
-            string wantedModeText = "";
+           // string wantedModeText = "";
 
-            switch (currentSpeakerMode)
+            /*switch (currentSpeakerMode)
             {
                 case 0:
                     wantedMode = AudioSpeakerMode.Mono;
@@ -220,7 +220,7 @@ namespace PaulosAudioMenu
                     wantedMode = AudioSpeakerMode.Prologic;
                     wantedModeText = "Prologic";
                     break;
-            }
+            }*/
 
             if (wantedMode != config.speakerMode)
             {
