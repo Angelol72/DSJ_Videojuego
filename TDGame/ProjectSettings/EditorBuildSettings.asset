@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NivelFacil.unity
+    path: Assets/Scenes/Level2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Login.unity
@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderBoard.unity
     guid: e0f7bfce7d4de8244802d789f4d872d4
+  - enabled: 1
+    path: Assets/Assets Salome/Scenes/Niveles.unity
+    guid: 6dcf5e34a13895344a881a775801d705
+  - enabled: 1
+    path: Assets/Scenes/Choice.unity
+    guid: e8f6a8227f20d164b8892956420e7672
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
