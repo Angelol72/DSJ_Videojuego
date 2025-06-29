@@ -58,6 +58,7 @@ public class EstudiantesManager : MonoBehaviour
                 CrearCelda((i + 1).ToString());
                 CrearCelda(estudiante.nombre);
                 CrearCelda(estudiante.apellidos);
+                CrearCelda(estudiante.grado);
                 CrearCelda(estudiante.puntos.ToString());
             }
         }
