@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,12 +125,12 @@ TextureImporter:
       name: Get Hit_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 31
-        width: 42
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 22
+        y: 32
+        width: 40
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,37 +144,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Get Hit_1
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 31
-        width: 45
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec07060fc3e1e5a30800000000000000
-      internalID: 4205832349090345166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Get Hit_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 65
-        width: 9
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 198
+        y: 32
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +169,12 @@ TextureImporter:
       name: Get Hit_3
       rect:
         serializedVersion: 2
-        x: 197
-        y: 31
-        width: 47
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 109
+        y: 32
+        width: 45
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f0222ca99152bbd48b3e1a3ee576c144
     internalID: 0
     vertices: []
     indices: 
@@ -221,7 +199,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":8.0,"y":8.0},"gridSpritePadding":{"x":64.0,"y":8.0},"pivot":{"x":0.5,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Get Hit_0: 4059951838069092975
       Get Hit_1: 4205832349090345166

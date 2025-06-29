@@ -52,9 +52,7 @@ public class GameTimer : MonoBehaviour
     // Handle win condition when time runs out
     void WinGame()
     {
+        GameManager.Instance.TriggerVictoryTransition();
         isGameOver = true;
-        Time.timeScale = 0f;
-        if (winCanvas != null)
-            winCanvas.SetActive(true);
     }
 }

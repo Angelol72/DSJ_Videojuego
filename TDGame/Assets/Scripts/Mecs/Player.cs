@@ -19,10 +19,10 @@ public class Player : Unit
 
     public override void Die()
     {
-        state = UnitState.Dead; // Set the state to Dead
-        Debug.Log(unitName + " has died.");
-        // Additional logic for player death can be added here
-        Time.timeScale = 0f;
+        if (state != UnitState.Dead)
+            GameManager.Instance.TriggerGameOverTransition();
+
+        state = UnitState.Dead;
     }
 
     public override void TakeDamage(int damage)

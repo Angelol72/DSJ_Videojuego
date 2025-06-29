@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class VictoryScreen : MonoBehaviour
 {
@@ -191,11 +192,13 @@ public class VictoryScreen : MonoBehaviour
     void RetryLevel()
     {
         Debug.Log("Retry level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     void LoadMainMenu()
     {
         Debug.Log("Main menu");
+        SceneManager.LoadScene("Main Menu");
     }
     
     void ConfigureUI()

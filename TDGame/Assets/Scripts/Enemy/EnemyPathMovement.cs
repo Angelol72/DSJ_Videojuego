@@ -42,6 +42,9 @@ public class EnemyPathMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.GameOver || GameManager.GamePaused)
+            return;
+
         // Check debuffs and whether the enemy can act
         Enemy enemy = GetComponent<Enemy>();
         if (enemy == null)

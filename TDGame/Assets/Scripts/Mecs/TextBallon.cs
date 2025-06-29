@@ -22,11 +22,35 @@ public class TextBallon : MonoBehaviour
     public EventHandler onCorrectAnswerEvent;
     public EventHandler onWrongAnswerEvent;
 
+    // Ref to pause state
+    private bool lastPauseState = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetQuestionAndAnswers(); // Set the question and answers at the start
         SetOptionListeners(); // Set listeners for the options
+    }
+
+    void Update()
+    {
+        if (GameManager.GamePaused != lastPauseState)
+        {
+            UpdateProblemTextVisibility();
+            lastPauseState = GameManager.GamePaused;
+        }
+    }
+
+    private void UpdateProblemTextVisibility()
+    {
+        if (problemText == null) return;
+
+        var textComponent = problemText.transform
+            .GetChild(0)
+            .GetChild(0)
+            .GetComponent<TMPro.TMP_Text>();
+
+        textComponent.enabled = !GameManager.GamePaused;
     }
 
     public void chargeNewProblem()

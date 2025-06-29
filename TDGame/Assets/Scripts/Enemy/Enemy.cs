@@ -29,6 +29,9 @@ public class Enemy : Unit
 
     private void Update()
     {
+        if (GameManager.GameOver || GameManager.GamePaused)
+            return;
+
         if (state == UnitState.Dead)
             return;
 

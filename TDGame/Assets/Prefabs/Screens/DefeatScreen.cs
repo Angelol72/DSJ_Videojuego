@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DefeatScreen : MonoBehaviour
 {
@@ -40,6 +41,19 @@ public class DefeatScreen : MonoBehaviour
     {
         PlaySound(whooshSound);
         StartCoroutine(DefeatSequence());
+    }
+
+    void ConfigureButtons()
+    {
+        retryButton.onClick.AddListener(() => {
+            PlaySound(buttonClickSound);
+            RetryLevel();
+        });
+        
+        menuButton.onClick.AddListener(() => {
+            PlaySound(buttonClickSound);
+            LoadMainMenu();
+        });
     }
     
     IEnumerator DefeatSequence()
@@ -143,17 +157,17 @@ public class DefeatScreen : MonoBehaviour
     }
     
     // Métodos de botones
-    void RetryLevel()
+    public void RetryLevel()
     {
         Debug.Log("Reintentar nivel");
         // Tu lógica de retry aquí
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void LoadMainMenu()
+    public void LoadMainMenu()
     {
         Debug.Log("Cargar menú principal");
         // Tu lógica de menú aquí
-        // SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 }
