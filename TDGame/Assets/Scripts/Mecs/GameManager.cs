@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         GameOver = true;
 
         UITransitionController.Instance.ActivateTransitionPanel();
-        StartCoroutine(WaitAndShowVictory());
+        StartCoroutine(WaitAndShowDefeat());
     }
 
     public void TriggerVictoryTransition()

@@ -39,6 +39,7 @@ public class DefeatScreen : MonoBehaviour
     
     void Start()
     {
+        ConfigureButtons();
         PlaySound(whooshSound);
         StartCoroutine(DefeatSequence());
     }
