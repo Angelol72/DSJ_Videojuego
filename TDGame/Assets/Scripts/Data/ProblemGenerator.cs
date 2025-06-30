@@ -122,11 +122,15 @@ public static class ProblemGenerator
         int c = a * x + b;
 
         string aStr = a == 1 ? "x" : $"{a}x";
-        string bSign = b >= 0 ? $"+ {b}" : $"- {Mathf.Abs(b)}";
+        string bStr = "";
+        if (b > 0)
+            bStr = $" + {b}";
+        else if (b < 0)
+            bStr = $" - {Mathf.Abs(b)}";
 
         var problem = new ProblemsData.Problem
         {
-            problemText = $"{aStr} {bSign} = {c}",
+            problemText = $"{aStr}{bStr} = {c}",
             answerText = $"{x}"
         };
 
