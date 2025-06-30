@@ -84,6 +84,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm
       objectReference: {fileID: 0}
+    - target: {fileID: 3787390833773434797, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.597
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787390833773434797, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9391
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787390833773434797, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0061
+      objectReference: {fileID: 0}
     - target: {fileID: 6884115104029927414, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
       propertyPath: speed
       value: 1
