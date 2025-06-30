@@ -28,5 +28,16 @@ public class Controller : MonoBehaviour
 	{
 		clickAudio.Play();
 	}
+
+    public void SalirDelJuego()
+    {
+        Debug.Log("Saliendo del juego...");
+		
+		#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+		#else
+			Application.Quit();
+		#endif
+    }
 	
 }
