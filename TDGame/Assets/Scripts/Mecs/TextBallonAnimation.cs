@@ -10,8 +10,10 @@ public class TextBallonAnimation : MonoBehaviour
     public GameObject problemText;
     public GameObject options;
 
+    public GameObject buttonClickableSprite;
+
     // Time animation duration
-    public float animationDuration = 0.4f; 
+    public float animationDuration = 0.4f;
     public float moveDistance = 0.9f;
 
     private Sequence sequence;
@@ -34,7 +36,7 @@ public class TextBallonAnimation : MonoBehaviour
             {
                 fadeOut(textBallon.enemyPathMovement.enrageDuration);
             };
-        } 
+        }
     }
 
     // Update is called once per frame
@@ -67,6 +69,11 @@ public class TextBallonAnimation : MonoBehaviour
         canvasGroup2.interactable = false;
         canvasGroup2.blocksRaycasts = false;
 
+        // Deactivate sprite clickable button
+        var button = buttonClickableSprite.GetComponent<UnityEngine.UI.Button>();
+        if (button != null)
+            button.interactable = false;
+
         // get canvas and set sorting order
         Canvas canvas = problemText.GetComponent<Canvas>();
         if (canvas != null)
@@ -87,13 +94,15 @@ public class TextBallonAnimation : MonoBehaviour
         CanvasGroup canvasGroup = options.GetComponent<CanvasGroup>(); // options CanvasGroup
         CanvasGroup canvasGroup2 = problemText.GetComponent<CanvasGroup>(); // problemText CanvasGroup
         Vector3 posicionInicial = problemText.transform.localPosition;
+        var button = buttonClickableSprite.GetComponent<UnityEngine.UI.Button>();
 
         sequence = DOTween.Sequence();
 
         // Hide the options with a fade-out effect
         if (canvasGroup != null)
         {
-            sequence.AppendCallback(() => {
+            sequence.AppendCallback(() =>
+            {
                 canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
             });
@@ -127,6 +136,8 @@ public class TextBallonAnimation : MonoBehaviour
             {
                 canvasGroup2.interactable = true;
                 canvasGroup2.blocksRaycasts = true;
+                if (button != null)
+                    button.interactable = true;
             });
 
             // Reset canvas sorting order
@@ -168,5 +179,12 @@ public class TextBallonAnimation : MonoBehaviour
                 fadeOut(0);
             }
         }
+    }
+
+    void OnDestroy()
+    {
+        DOTween.Kill(this);
+
+        if (sequence != null) sequence.Kill();
     }
 }
