@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour
 {
     public AudioSource backgroundAudio;
+	public AudioSource clickAudio;
     public GameObject iconoSonido; 
     public GameObject iconoMute;   
 
@@ -22,4 +23,10 @@ public class Controller : MonoBehaviour
             if (iconoMute != null) iconoMute.SetActive(estaMuteado);
         }
     }
+	
+	public void Click()
+	{
+		clickAudio.Play();
+	}
+	
 }
