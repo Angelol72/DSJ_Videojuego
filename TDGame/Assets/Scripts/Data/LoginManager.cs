@@ -1,26 +1,61 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.IO;
 using TMPro;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
     public TMP_InputField inputNombre;
     public TMP_InputField inputApellido;
-    public TMP_InputField inputGrado;
+    public TMP_Dropdown dropdownGrado;
+
+    private string rutaArchivo;
+
+    private void Start()
+    {
+        rutaArchivo = Path.Combine(Application.persistentDataPath, "usuarios.json");
+    }
 
     public void GuardarDatosEnJson()
     {
-        UsuarioData usuario = new UsuarioData();
-        usuario.nombre = inputNombre.text;
-        usuario.apellido = inputApellido.text;
-        usuario.grado = inputGrado.text;
+        string nombre = inputNombre.text.Trim();
+        string apellido = inputApellido.text.Trim();
 
-        string json = JsonUtility.ToJson(usuario, true);
+        if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido))
+        {
+            Debug.LogWarning("¡El nombre y el apellido son obligatorios!");
+            return;
+        }
 
-        string ruta = Path.Combine(Application.persistentDataPath, "UsuarioData.json");
-        File.WriteAllText(ruta, json);
+        UsuarioData nuevoUsuario = new UsuarioData
+        {
+            nombre = nombre,
+            apellido = apellido,
+            grado = dropdownGrado.options[dropdownGrado.value].text
+        };
 
-        Debug.Log("Datos guardados en: " + ruta);
+        ListaUsuarios lista;
+
+        // Leer archivo existente
+        if (File.Exists(rutaArchivo))
+        {
+            string jsonExistente = File.ReadAllText(rutaArchivo);
+            lista = JsonUtility.FromJson<ListaUsuarios>(jsonExistente);
+            if (lista == null) lista = new ListaUsuarios();
+        }
+        else
+        {
+            lista = new ListaUsuarios();
+        }
+
+        // Agregar nuevo usuario a la lista
+        lista.usuarios.Add(nuevoUsuario);
+
+        // Guardar la lista completa otra vez
+        string jsonFinal = JsonUtility.ToJson(lista, true);
+        File.WriteAllText(rutaArchivo, jsonFinal);
+
+        Debug.Log("Usuario agregado correctamente: " + rutaArchivo);
+		SceneManager.LoadScene("Choice");
     }
 }
