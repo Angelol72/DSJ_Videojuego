@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static bool GameOver { get; private set; }
     public static bool GamePaused { get; private set; }
+    public static bool GameVictory { get; private set; }
 
     public static GameManager Instance { get; private set; }
 
@@ -22,31 +23,37 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (!GameVictory && !GameOver)
         {
-            if (!GamePaused)
-                TriggerPausedTransition();
-            else
-                ResumeGamePaused();
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                if (!GamePaused)
+                    TriggerPausedTransition();
+                else
+                    ResumeGamePaused();
+            }
         }
     }
 
     public void TriggerGameOverTransition()
     {
-        if (GameOver) return; // Prevent multiple triggers
+        if (GameOver || GamePaused || GameVictory) return; // Prevent multiple triggers
 
         GameOver = true;
 
+        GameUISoundController.Instance.StopMusicWithFade(2f);
         UITransitionController.Instance.ActivateTransitionPanel();
         StartCoroutine(WaitAndShowDefeat());
     }
 
     public void TriggerVictoryTransition()
     {
-        if (GamePaused) return;
+        if (GamePaused || GameOver) return;
 
         GamePaused = true;
+        GameVictory = true;
 
+        GameUISoundController.Instance.StopMusicWithFade(2f);
         UITransitionController.Instance.ActivateTransitionPanel();
         StartCoroutine(WaitAndShowVictory());
     }
