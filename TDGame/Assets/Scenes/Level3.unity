@@ -14194,6 +14194,9 @@ MonoBehaviour:
   pathData: {fileID: 128896607}
   problemsData: {fileID: 11400000, guid: 4bd791de55500194d8284ac065ce1baf, type: 2}
   waves:
+  - enemyPrefab: {fileID: 6928231940102314447, guid: 27de46b4d535f544db98a161228e16f8, type: 3}
+    count: 3
+    spawnInterval: 3
   - enemyPrefab: {fileID: 3422159908262490301, guid: b5c6ec549ade2b44ea385e0824eb8f89, type: 3}
     count: 3
     spawnInterval: 22
