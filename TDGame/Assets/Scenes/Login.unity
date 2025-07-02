@@ -1525,14 +1525,14 @@ RectTransform:
   m_GameObject: {fileID: 850008126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4853208, y: 3.4853208, z: 3.4853208}
+  m_LocalScale: {x: 5.844934, y: 4.174953, z: 3.9293675}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 178717814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -606.43, y: -120.7}
+  m_AnchoredPosition: {x: -512, y: -67}
   m_SizeDelta: {x: 91.8947, y: 200.7377}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850008128
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1462874628380888676, guid: 26f51b8b7ff49de4d802285f7e8c3ac2, type: 3}
+  m_Sprite: {fileID: -5705601665965950085, guid: 69539907f67a25e4f8620f2a548867e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3467,15 +3467,15 @@ RectTransform:
   m_GameObject: {fileID: 1937788561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4853208, y: 3.4853208, z: 3.4853208}
+  m_LocalScale: {x: 4.53266, y: 4.53266, z: 4.53266}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 178717814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 613.41, y: -135.92}
-  m_SizeDelta: {x: 74.5261, y: 197.74}
+  m_AnchoredPosition: {x: 594, y: -87}
+  m_SizeDelta: {x: 108.7645, y: 197.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937788563
 MonoBehaviour:
@@ -3497,7 +3497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1455718929532272802, guid: f0b30027b2ebf20439a5b0355cdd4417, type: 3}
+  m_Sprite: {fileID: -1911615455956513598, guid: c1c725ed7f759634893e0516ae9f3adb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
