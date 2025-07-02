@@ -307,13 +307,14 @@ MonoBehaviour:
     count: 3
     spawnInterval: 12
   - enemyPrefab: {fileID: 2743160470150302435, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
-    count: 4
+    count: 2
     spawnInterval: 12
   - enemyPrefab: {fileID: 544309855620937962, guid: ea9d66f77d6e8fd40b2b894c5a08929a, type: 3}
     count: 3
     spawnInterval: 16
   timeBetweenWaves: 10
   flipEnemies: 1
+  isFinished: 0
 --- !u!4 &67417821
 Transform:
   m_ObjectHideFlags: 0
@@ -2160,7 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   freezeDuration: 10
   freezeManaCost: 6
-  lightningManaCost: 5
+  lightningManaCost: 8
   lightningDamage: 1
   lightningEffectPrefab: {fileID: 3528218044405312179, guid: 304541d3cfa2f074c90a5ed1dd3c7d9e, type: 3}
 --- !u!114 &463218853
@@ -14682,6 +14683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141305030}
   - component: {fileID: 1141305031}
+  - component: {fileID: 1141305032}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -14714,6 +14716,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aaf374592b385b45a15f09c0726816d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1141305032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141305028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41f4fc15a479c24b9d043064037732e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1148432157
@@ -15123,7 +15137,7 @@ MonoBehaviour:
   waves:
   - enemyPrefab: {fileID: 3422159908262490301, guid: b5c6ec549ade2b44ea385e0824eb8f89, type: 3}
     count: 3
-    spawnInterval: 24
+    spawnInterval: 22
   - enemyPrefab: {fileID: 2743160470150302435, guid: ec9406bb4b561d54a820a9974015401e, type: 3}
     count: 2
     spawnInterval: 14
@@ -15135,6 +15149,7 @@ MonoBehaviour:
     spawnInterval: 1
   timeBetweenWaves: 12
   flipEnemies: 0
+  isFinished: 0
 --- !u!4 &1174427342
 Transform:
   m_ObjectHideFlags: 0
@@ -15144,7 +15159,7 @@ Transform:
   m_GameObject: {fileID: 1174427339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38.559998, y: -8.99, z: 0}
+  m_LocalPosition: {x: -37.97, y: -8.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

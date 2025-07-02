@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     {
         ResetGameOver();
         ResetGamePaused();
+        ResetGameVictory();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -23,15 +25,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!GameVictory && !GameOver)
+        if (GameVictory || GameOver)
+            return;
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (Keyboard.current.escapeKey.wasPressedThisFrame)
-            {
-                if (!GamePaused)
-                    TriggerPausedTransition();
-                else
-                    ResumeGamePaused();
-            }
+            if (!GamePaused)
+                TriggerPausedTransition();
+            else
+                ResumeGamePaused();
+        }
+
+        if (SpawnerManager.Instance != null && SpawnerManager.Instance.ActiveEnemyCount <= 0 && SpawnerManager.Instance.AllSpawnersAreFinished())
+        {
+            TriggerVictoryTransition();
         }
     }
 
@@ -76,6 +83,11 @@ public class GameManager : MonoBehaviour
     private void ResetGamePaused()
     {
         GamePaused = false;
+    }
+
+    private void ResetGameVictory()
+    {
+        GameVictory = false;
     }
 
     public void ResumeGamePaused()

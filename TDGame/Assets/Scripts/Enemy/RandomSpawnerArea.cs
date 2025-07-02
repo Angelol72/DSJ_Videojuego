@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RandomSpawnerArea : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RandomSpawnerArea : MonoBehaviour
 
     private int currentWaveIndex = 0;
     private bool isSpawning = false;
+    public bool isFinished = false;
 
     private void Update()
     {
@@ -20,6 +22,16 @@ public class RandomSpawnerArea : MonoBehaviour
         {
             StartCoroutine(SpawnWave(waves[currentWaveIndex]));
         }
+    }
+
+    private void OnEnable()
+    {
+        SpawnerManager.Instance?.RegisterSpawner(this);
+    }
+
+    private void OnDisable()
+    {
+        SpawnerManager.Instance?.UnregisterSpawner(this);
     }
 
     IEnumerator SpawnWave(Wave wave)
@@ -58,12 +70,42 @@ public class RandomSpawnerArea : MonoBehaviour
                 textBallon.SetOptionListeners();
             }
 
-            yield return new WaitForSeconds(wave.spawnInterval);
+            //yield return new WaitForSeconds(wave.spawnInterval);
+
+            float intervalTimer = 0f;
+            while (intervalTimer < wave.spawnInterval && SpawnerManager.Instance != null && SpawnerManager.Instance.ActiveEnemyCount > 0)
+            {
+                intervalTimer += Time.deltaTime;
+                yield return null;
+            }
         }
 
         currentWaveIndex++;
-        yield return new WaitForSeconds(timeBetweenWaves);
+
+        // Wait N seconds until next wave or spawn if number of enemies is zero
+        float timer = 0f;
+        while (timer < timeBetweenWaves && SpawnerManager.Instance != null && SpawnerManager.Instance.ActiveEnemyCount > 0)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        //isSpawning = false; 
+        //yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = false;
+
+        // Marcar como terminado si ya no quedan más oleadas
+        if (currentWaveIndex >= waves.Length)
+        {
+            isFinished = true;
+        }
+    }
+
+    public void ResetSpawner()
+    {
+        currentWaveIndex = 0;
+        isSpawning = false;
+        isFinished = false;
     }
 
     private void OnDrawGizmosSelected()
@@ -71,4 +113,5 @@ public class RandomSpawnerArea : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, size);
     }
+
 }
