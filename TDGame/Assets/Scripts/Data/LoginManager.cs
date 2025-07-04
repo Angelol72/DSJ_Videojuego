@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using System.IO;
-using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class LoginManager : MonoBehaviour
 
     private void Start()
     {
-        rutaArchivo = Path.Combine(Application.persistentDataPath, "usuarios.json");
+        rutaArchivo = Path.Combine(Application.persistentDataPath, "usuario.json");
     }
 
     public void GuardarDatosEnJson()
@@ -33,29 +32,9 @@ public class LoginManager : MonoBehaviour
             apellido = apellido,
             grado = dropdownGrado.options[dropdownGrado.value].text
         };
+        string json = JsonUtility.ToJson(nuevoUsuario, true);
+        File.WriteAllText(rutaArchivo, json);
 
-        ListaUsuarios lista;
-
-        // Leer archivo existente
-        if (File.Exists(rutaArchivo))
-        {
-            string jsonExistente = File.ReadAllText(rutaArchivo);
-            lista = JsonUtility.FromJson<ListaUsuarios>(jsonExistente);
-            if (lista == null) lista = new ListaUsuarios();
-        }
-        else
-        {
-            lista = new ListaUsuarios();
-        }
-
-        // Agregar nuevo usuario a la lista
-        lista.usuarios.Add(nuevoUsuario);
-
-        // Guardar la lista completa otra vez
-        string jsonFinal = JsonUtility.ToJson(lista, true);
-        File.WriteAllText(rutaArchivo, jsonFinal);
-
-        Debug.Log("Usuario agregado correctamente: " + rutaArchivo);
-		SceneManager.LoadScene("Choice");
+        Debug.Log("Usuario guardado correctamente en: " + rutaArchivo);
     }
 }
