@@ -166,7 +166,7 @@ public class TextBallon : MonoBehaviour
         msg.text = "!";
         StartCoroutine(WaitAndResetText(msg));
 
-        Debug.Log("Wrong answer selected!");
+        // Debug.Log("Wrong answer selected!");
         // Add your logic for wrong answer here, e.g., show a message, update score, etc.
     }
 

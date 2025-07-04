@@ -36,7 +36,6 @@ public class EnemyPathMovement : MonoBehaviour
     void OnEnemyDie(object sender, System.EventArgs e)
     {
         // Handle enemy death, e.g., stop movement or play death animation
-        Debug.Log("Enemy has died.");
         this.enabled = false; // Disable this script to stop movement
     }
 

@@ -22,6 +22,16 @@ public class Enemy : Unit
     private List<Debuff> activeDebuffs = new List<Debuff>();
     public bool canAct = true;
 
+    void OnEnable()
+    {
+        SpawnerManager.Instance?.IncrementEnemyCount();
+    }
+
+    void OnDestroy()
+    {
+        SpawnerManager.Instance?.DecrementEnemyCount();
+    }
+
     void Start()
     {
         SubscribeEvents(); // Subscribe to events
