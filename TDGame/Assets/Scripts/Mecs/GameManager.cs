@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         GameOver = true;
 
-        GameUISoundController.Instance.StopMusicWithFade(2f);
+        GameUISoundController.Instance.StopMusicWithFade(1.5f);
         UITransitionController.Instance.ActivateTransitionPanel();
         StartCoroutine(WaitAndShowDefeat());
     }
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         GamePaused = true;
         GameVictory = true;
 
-        GameUISoundController.Instance.StopMusicWithFade(2f);
+        GameUISoundController.Instance.StopMusicWithFade(1.5f);
         UITransitionController.Instance.ActivateTransitionPanel();
         StartCoroutine(WaitAndShowVictory());
     }
@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
     private void ResetGamePaused()
     {
         GamePaused = false;
+        Time.timeScale = 1f;
     }
 
     private void ResetGameVictory()
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGamePaused()
     {
         ResetGamePaused();
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         UITransitionController.Instance.DeactivatePauseWindow();
     }
 
