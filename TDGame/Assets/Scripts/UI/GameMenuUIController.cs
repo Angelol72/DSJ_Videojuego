@@ -25,6 +25,11 @@ public class GameMenuUIController : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void LoadSettings()
     {
         //SceneManager.LoadScene("Settings");
