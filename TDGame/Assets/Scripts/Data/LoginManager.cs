@@ -38,6 +38,6 @@ public class LoginManager : MonoBehaviour
         File.WriteAllText(rutaArchivo, json);
 
         Debug.Log("Usuario guardado correctamente en: " + rutaArchivo);
-		SceneManager.LoadScene(choice);
+		SceneManager.LoadScene("Choice");
     }
 }
