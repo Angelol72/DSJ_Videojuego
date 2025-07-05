@@ -60,6 +60,12 @@ public class GameManager : MonoBehaviour
         GamePaused = true;
         GameVictory = true;
 
+        // Save player score
+        Player player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
+        
+        if (player != null)
+            player.saveScore();
+
         GameUISoundController.Instance.StopMusicWithFade(1.5f);
         UITransitionController.Instance.ActivateTransitionPanel();
         StartCoroutine(WaitAndShowVictory());

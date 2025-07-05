@@ -53,6 +53,5 @@ public class GameTimer : MonoBehaviour
     void WinGame()
     {
         GameManager.Instance.TriggerVictoryTransition();
-        isGameOver = true;
     }
 }
