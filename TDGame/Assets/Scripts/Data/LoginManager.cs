@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
@@ -30,11 +31,13 @@ public class LoginManager : MonoBehaviour
         {
             nombre = nombre,
             apellido = apellido,
-            grado = dropdownGrado.options[dropdownGrado.value].text
+            grado = dropdownGrado.options[dropdownGrado.value].text,
+			score = 0
         };
         string json = JsonUtility.ToJson(nuevoUsuario, true);
         File.WriteAllText(rutaArchivo, json);
 
         Debug.Log("Usuario guardado correctamente en: " + rutaArchivo);
+		SceneManager.LoadScene(choice);
     }
 }
