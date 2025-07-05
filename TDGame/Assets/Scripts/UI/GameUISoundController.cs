@@ -13,8 +13,10 @@ public class GameUISoundController : MonoBehaviour
     public AudioClip monsterDie;
     public AudioClip castleTakeDamage;
     public AudioClip bgMusic;
+    public AudioClip pauseMusic; 
     public AudioSource sfxSource;
-    public AudioSource musicSource;
+    public AudioSource musicSource; // To play music bg
+    public AudioSource musicSource2; // To play pause music
     private AudioClip currentMusic;
 
     private void Awake()
@@ -114,6 +116,51 @@ public class GameUISoundController : MonoBehaviour
         if (musicSource != null)
         {
             StartCoroutine(FadeOutMusic(fadeDuration));
+        }
+    }
+
+    public void PlayPauseMusic()
+    {
+        if (musicSource2 != null && pauseMusic != null)
+        {
+            musicSource2.clip = pauseMusic;
+            musicSource2.loop = true;
+            musicSource2.Play();
+        }
+    }
+
+    public void ResumePauseMusic()
+    {
+        if (musicSource2 != null)
+        {
+            if (!musicSource2.isPlaying)
+                PlayPauseMusic();
+            else
+                musicSource2.UnPause();
+        }
+    }
+
+    public void StopPauseMusic()
+    {
+        if (musicSource2 != null)
+        {
+            musicSource2.Pause();
+        }
+    }
+
+    public void StopBGMusic()
+    {
+        if (musicSource != null)
+        {
+            musicSource.Pause();
+        }
+    }
+
+    public void ResumeBGMusic()
+    {
+        if (musicSource != null && !musicSource.isPlaying)
+        {
+            musicSource.UnPause();
         }
     }
 

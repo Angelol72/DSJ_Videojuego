@@ -70,6 +70,9 @@ public class GameManager : MonoBehaviour
         if (GamePaused) return;
 
         GamePaused = true;
+        // Music controller
+        GameUISoundController.Instance.StopBGMusic();
+        GameUISoundController.Instance.ResumePauseMusic();
 
         UITransitionController.Instance.ActivatePauseWindow();
         Time.timeScale = 0f;
@@ -94,7 +97,10 @@ public class GameManager : MonoBehaviour
     public void ResumeGamePaused()
     {
         ResetGamePaused();
-        //Time.timeScale = 1f;
+        // Music controller
+        GameUISoundController.Instance.StopPauseMusic();
+        GameUISoundController.Instance.ResumeBGMusic();
+
         UITransitionController.Instance.DeactivatePauseWindow();
     }
 
