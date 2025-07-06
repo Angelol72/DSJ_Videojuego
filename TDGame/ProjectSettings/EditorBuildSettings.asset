@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SONIDO2.unity
     guid: 5b8a1290c80e2ac4c84dec731a788269
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: b2c7c69091d28504ab34a7566bc38fdb
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 5c28f025177d1bf47ac0a32b023ffcc8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
