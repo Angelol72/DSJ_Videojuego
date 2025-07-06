@@ -15915,14 +15915,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4007758146051366311, guid: fa78bceabed48704fa64b4a4b9844c15, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 33.783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007758146051366311, guid: fa78bceabed48704fa64b4a4b9844c15, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -51.295
-      objectReference: {fileID: 0}
     - target: {fileID: 4940318549850099223, guid: fa78bceabed48704fa64b4a4b9844c15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16014,10 +16006,6 @@ PrefabInstance:
     - target: {fileID: 8463533310887668643, guid: fa78bceabed48704fa64b4a4b9844c15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043767479019699305, guid: fa78bceabed48704fa64b4a4b9844c15, type: 3}
-      propertyPath: totalTime
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
