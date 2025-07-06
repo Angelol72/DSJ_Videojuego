@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5403618743525320237, guid: dc21945c7d8f94347b2644966322f742, type: 3}
       propertyPath: m_Name
-      value: DefeatScreen Variant
+      value: DefeatScreen
       objectReference: {fileID: 0}
     - target: {fileID: 5759875838133606287, guid: dc21945c7d8f94347b2644966322f742, type: 3}
       propertyPath: m_SizeDelta.x
@@ -192,6 +192,7 @@ PrefabInstance:
     - {fileID: 2613424700732546079, guid: dc21945c7d8f94347b2644966322f742, type: 3}
     - {fileID: 8374652844190397171, guid: dc21945c7d8f94347b2644966322f742, type: 3}
     - {fileID: 4225615634630462656, guid: dc21945c7d8f94347b2644966322f742, type: 3}
+    - {fileID: 5396930616436528393, guid: dc21945c7d8f94347b2644966322f742, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5403618743525320237, guid: dc21945c7d8f94347b2644966322f742, type: 3}

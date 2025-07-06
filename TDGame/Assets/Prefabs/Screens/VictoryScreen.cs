@@ -12,6 +12,7 @@ public class VictoryScreen : MonoBehaviour
     public Image[] stars;
     public Button nextLevelButton;
     public Button retryButton;
+    public Button selectLevelButton;
     public Button menuButton;
     
     [Header("Audio Clips")]
@@ -57,7 +58,12 @@ public class VictoryScreen : MonoBehaviour
             PlaySound(buttonClickSound);
             RetryLevel();
         });
-        
+
+        selectLevelButton.onClick.AddListener(() => {
+            PlaySound(buttonClickSound);
+            SelectLevelScene();
+        });
+
         menuButton.onClick.AddListener(() => {
             PlaySound(buttonClickSound);
             LoadMainMenu();
@@ -193,6 +199,12 @@ public class VictoryScreen : MonoBehaviour
     {
         Debug.Log("Retry level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void SelectLevelScene()
+    {
+        //Debug.Log("Select level scene");
+        SceneManager.LoadScene("Niveles");
     }
     
     void LoadMainMenu()
