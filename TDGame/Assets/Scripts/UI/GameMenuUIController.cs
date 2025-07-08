@@ -35,6 +35,11 @@ public class GameMenuUIController : MonoBehaviour
         //SceneManager.LoadScene("Settings");
     }
 
+    public void LoadLevelSelect()
+    {
+        SceneManager.LoadScene("Niveles");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
