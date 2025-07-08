@@ -2410,7 +2410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -745.74023, y: 435.82428}
+  m_AnchoredPosition: {x: -790, y: 435.82428}
   m_SizeDelta: {x: 408.6494, y: 164.3514}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853297284
@@ -2433,7 +2433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEADERBOARD
+  m_text: "tabla de clasificaci\xF3n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 936a02e094e9d184ea3f05f70c70002b, type: 2}
   m_sharedMaterial: {fileID: -2430634899121131788, guid: 936a02e094e9d184ea3f05f70c70002b, type: 2}
@@ -2460,7 +2460,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 67.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
