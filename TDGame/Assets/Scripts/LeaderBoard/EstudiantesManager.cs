@@ -19,16 +19,22 @@ public class ListaEstudiantes
 
 public class EstudiantesManager : MonoBehaviour
 {
-    public GameObject tablaEstudiantes; // El Panel con el Grid Layout Group
-    public GameObject celdaPrefab;     // Prefab de un Text para las celdas
+    [Header("Referencias UI")]
+    public GameObject tablaEstudiantes;     // El Panel con el Grid Layout Group (dentro del ScrollRect)
+    public GameObject celdaPrefab;          // Prefab de un Text para las celdas
+    public ScrollRect scrollRect;           // Referencia al ScrollRect
+    
+    [Header("Configuración")]
+    public bool incluirEncabezados = true;  // Si quieres mostrar encabezados
+    
     private ListaEstudiantes listaEstudiantes;
-
+    
     void Start()
     {
         CargarEstudiantes();
         CrearTabla();
     }
-
+    
     void CargarEstudiantes()
     {
         TextAsset archivoJSON = Resources.Load<TextAsset>("estudiantes");
@@ -41,32 +47,112 @@ public class EstudiantesManager : MonoBehaviour
             Debug.LogError("No se pudo cargar el archivo JSON.");
         }
     }
-
+    
     void CrearTabla()
     {
         if (listaEstudiantes != null && listaEstudiantes.estudiantes.Length > 0)
         {
+            // Limpiar tabla existente
+            LimpiarTabla();
+            
+            // Crear encabezados si está habilitado
+            if (incluirEncabezados)
+            {
+                CrearEncabezados();
+            }
+            
+            // Ordenar estudiantes por puntos
             var estudiantesOrdenados = listaEstudiantes.estudiantes
                 .OrderByDescending(estudiante => estudiante.puntos)
                 .ToArray();
-
-       
-
-            for (int i = 0; i < 5; i++)
+            
+            // Crear filas para TODOS los estudiantes (sin límite)
+            for (int i = 0; i < estudiantesOrdenados.Length; i++)
             {
                 var estudiante = estudiantesOrdenados[i];
-                CrearCelda((i + 1).ToString());
-                CrearCelda(estudiante.nombre);
-                CrearCelda(estudiante.apellidos);
-                CrearCelda(estudiante.grado);
-                CrearCelda(estudiante.puntos.ToString());
+                CrearFilaEstudiante(i + 1, estudiante);
             }
+            
+            // Ajustar el contenido del scroll
+            AjustarContenidoScroll();
         }
     }
-
-    void CrearCelda(string texto)
+    
+    void CrearEncabezados()
+    {
+        CrearCelda("Pos.", true);
+        CrearCelda("Nombre", true);
+        CrearCelda("Apellidos", true);
+        CrearCelda("Grado", true);
+        CrearCelda("Puntos", true);
+    }
+    
+    void CrearFilaEstudiante(int posicion, Estudiante estudiante)
+    {
+        CrearCelda(posicion.ToString());
+        CrearCelda(estudiante.nombre);
+        CrearCelda(estudiante.apellidos);
+        CrearCelda(estudiante.grado);
+        CrearCelda(estudiante.puntos.ToString());
+    }
+    
+    void CrearCelda(string texto, bool esEncabezado = false)
     {
         GameObject nuevaCelda = Instantiate(celdaPrefab, tablaEstudiantes.transform);
-        nuevaCelda.GetComponent<Text>().text = texto;
+        Text textComponent = nuevaCelda.GetComponent<Text>();
+        textComponent.text = texto;
+        
+        // Opcional: Estilo diferente para encabezados
+        if (esEncabezado)
+        {
+            textComponent.fontStyle = FontStyle.Bold;
+            textComponent.color = Color.black;
+        }
+    }
+    
+    void LimpiarTabla()
+    {
+        // Destruir todas las celdas existentes
+        foreach (Transform child in tablaEstudiantes.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+    
+    void AjustarContenidoScroll()
+    {
+        // Forzar la actualización del layout
+        Canvas.ForceUpdateCanvases();
+        
+        // Opcional: Hacer scroll hacia arriba
+        if (scrollRect != null)
+        {
+            scrollRect.verticalNormalizedPosition = 1f;
+        }
+    }
+    
+    // Método público para recargar la tabla
+    public void RecargarTabla()
+    {
+        CargarEstudiantes();
+        CrearTabla();
+    }
+    
+    // Método para ir al principio de la lista
+    public void IrAlPrincipio()
+    {
+        if (scrollRect != null)
+        {
+            scrollRect.verticalNormalizedPosition = 1f;
+        }
+    }
+    
+    // Método para ir al final de la lista
+    public void IrAlFinal()
+    {
+        if (scrollRect != null)
+        {
+            scrollRect.verticalNormalizedPosition = 0f;
+        }
     }
 }
