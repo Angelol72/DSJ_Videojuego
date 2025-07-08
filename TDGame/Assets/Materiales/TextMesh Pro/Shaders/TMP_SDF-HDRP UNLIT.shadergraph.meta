@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 guid: 70954a091c9fbf940ab69d21d89bb8cd
-=======
-guid: 10b64152d3b8340469b15476bba4e055
->>>>>>> Stashed changes
-=======
-guid: 10b64152d3b8340469b15476bba4e055
->>>>>>> Stashed changes
-=======
-guid: 10b64152d3b8340469b15476bba4e055
->>>>>>> Stashed changes
-ScriptedImporter:
-  internalIDToNameTable: []
+DefaultImporter:
   externalObjects: {}
-  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
