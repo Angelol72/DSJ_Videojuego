@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class PlayClickSound : MonoBehaviour
 {
-    public AudioClip clickSound; // arrastra el audio aquí
+    public AudioClip clickSound; // arrastra el audio aquï¿½
     private AudioSource audioSource;
 
     private void Awake()
     {
-        // Verifica si ya hay un AudioSource, si no, lo añade.
+        // Verifica si ya hay un AudioSource, si no, lo aï¿½ade.
         audioSource = gameObject.GetComponent<AudioSource>();
         if (audioSource == null)
         {

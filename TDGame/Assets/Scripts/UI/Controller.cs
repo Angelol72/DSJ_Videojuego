@@ -41,7 +41,7 @@ public class Controller : MonoBehaviour
 
     public void Click()
     {
-        if (clickAudio != null)
+        if (clickAudio != null && !AudioManager.Instance.IsMuted())
         {
             // Opcional: ajusta el volumen según configuración
             clickAudio.volume = AudioManager.Instance.GetVolume("fxVolume");
