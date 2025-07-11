@@ -10,8 +10,6 @@ public class GameTimer : MonoBehaviour
     public Slider timerSlider; // Assign a UI Slider in the inspector
     public GameObject winCanvas; // Victory Canvas
 
-    private bool isGameOver = false;
-
     void Start()
     {
         currentTime = totalTime;
@@ -28,7 +26,7 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        if (isGameOver) return;
+        if (GameManager.GameVictory) return;
 
         currentTime -= Time.deltaTime;
         if (currentTime <= 0)
