@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System.IO;
 
 [System.Serializable]
 public class Estudiante
@@ -37,14 +38,18 @@ public class EstudiantesManager : MonoBehaviour
     
     void CargarEstudiantes()
     {
-        TextAsset archivoJSON = Resources.Load<TextAsset>("estudiantes");
-        if (archivoJSON != null)
+        // Ruta persistente para estudiantes.json
+        string studentsPath = Path.Combine(Application.persistentDataPath, "estudiantes.json");
+        if (File.Exists(studentsPath))
         {
-            listaEstudiantes = JsonUtility.FromJson<ListaEstudiantes>("{\"estudiantes\":" + archivoJSON.text + "}");
+            string json = File.ReadAllText(studentsPath);
+            // Envuelve el array para deserializar correctamente
+            listaEstudiantes = JsonUtility.FromJson<ListaEstudiantes>("{\"estudiantes\":" + json + "}");
         }
         else
         {
-            Debug.LogError("No se pudo cargar el archivo JSON.");
+            Debug.LogWarning("No se encontró estudiantes.json en persistentDataPath. Se crea lista vacía.");
+            listaEstudiantes = new ListaEstudiantes { estudiantes = new Estudiante[0] };
         }
     }
     

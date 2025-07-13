@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         Player player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
         
         if (player != null)
-            player.saveScore();
+            player.SaveScore();
 
         GameUISoundController.Instance.StopMusicWithFade(1.5f);
         UITransitionController.Instance.ActivateTransitionPanel();

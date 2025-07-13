@@ -50,13 +50,14 @@ public class Player : Unit
         }
     }
 
-    public void saveScore()
+    public void SaveScore()
     {
-        string pathToSave = "Resources/estudiantes.json";
+        string studentsFileName = "estudiantes.json";
         string userFileName = "usuario.json";
-    #if UNITY_EDITOR
-        // Read user data
+        string studentsPath = Path.Combine(Application.persistentDataPath, studentsFileName);
         string userDataPath = Path.Combine(Application.persistentDataPath, userFileName);
+
+        // Read user data
         string userJson = File.Exists(userDataPath) ? File.ReadAllText(userDataPath) : null;
         string firstName = "John";
         string lastName = "Doe";
@@ -73,10 +74,7 @@ public class Player : Unit
             }
         }
 
-        // Path to estudiantes.json in Resources
-        string studentsPath = Path.Combine(Application.dataPath, pathToSave);
-
-        // Read the existing file
+        // Read the existing estudiantes.json
         string json = File.Exists(studentsPath) ? File.ReadAllText(studentsPath) : "[]";
 
         // Adjust format to deserialize as ListaEstudiantes
@@ -85,18 +83,16 @@ public class Player : Unit
         if (studentsList == null || studentsList.estudiantes == null)
             studentsList = new ListaEstudiantes { estudiantes = new Estudiante[0] };
 
-        // Check if the user already exists (by first and last name)
+        // Update or add student
         var newList = studentsList.estudiantes.ToList();
-        var existing = newList.Find(e => e.nombre == firstName && e.apellidos == lastName);
+        var existing = newList.Find(e => e.nombre == firstName && e.apellidos == lastName && e.grado == grade);
         if (existing != null)
         {
-            // If exists, update the score only if it is higher
             if (score > existing.puntos)
                 existing.puntos = score;
         }
         else
         {
-            // If not, add a new one
             Estudiante newStudent = new Estudiante {
                 nombre = firstName,
                 apellidos = lastName,
@@ -113,8 +109,6 @@ public class Player : Unit
         int end = jsonArray.LastIndexOf(']');
         string onlyArray = jsonArray.Substring(start, end - start + 1);
         File.WriteAllText(studentsPath, onlyArray);
-    #else
-        Debug.LogWarning("Saving in Resources is only possible in the Unity editor.");
-    #endif
+
     }
 }
