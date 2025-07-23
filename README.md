@@ -192,6 +192,8 @@ El sistema genera ecuaciones lineales del tipo:
 
 - **Pedro**: Desarrollo de mecánicas principales
 - **Salomé**: Diseño de personajes y arte
+- **Marco**: Diseño de menús y sonidos
+- **Vladimir**: Diseño y funcionamiento de niveles
 
 ## 📞 Soporte
 
